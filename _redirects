@@ -1,4 +1,0 @@
-# Route subdomains to their respective folders
-/alevels/*  /alevels/:splat  200
-/prepa/*    /prepa/:splat   200
-/*          /index.html     200

@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "https://alevels.theexamlab.com/*"
+  to = "/alevels/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://prepa.theexamlab.com/*"
+  to = "/prepa/:splat"
+  status = 200
+  force = true
