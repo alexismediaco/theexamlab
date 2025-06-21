@@ -1,2 +1,4 @@
-https://alevels.theexamlab.com/* /alevels/:splat 200
-https://prepa.theexamlab.com/* /prepa/:splat 200
+# Route subdomains to their respective folders
+/alevels/*  /alevels/:splat  200
+/prepa/*    /prepa/:splat   200
+/*          /index.html     200
