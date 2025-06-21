@@ -42,6 +42,16 @@
             margin: 0 auto 15px;
             display: block;
         }
+		
+		.logo-link {
+			display: inline-block;
+			text-decoration: none;
+			transition: transform 0.3s ease;
+		}
+
+		.logo-link:hover {
+			transform: scale(1.05);
+		}
 
         .nav-menu {
             list-style: none;
@@ -293,8 +303,10 @@
     
     <div class="sidebar" id="sidebar">
         <div class="logo-container">
-            <img src="../logo.svg" alt="The Exam Lab" class="logo-image">
-        </div>
+			<a href="https://alevels.theexamlab.com" class="logo-link">
+			<img src="../logo.svg" alt="The Exam Lab" class="logo-image">
+			</a>
+		</div>
         
         <nav>
             <ul class="nav-menu">
