@@ -1053,12 +1053,15 @@
                     workText: document.getElementById('workText').value.trim()
                 };
 
+                console.log('Attempting to send email...', submissionData);
                 const emailSent = await sendEmailNotification(submissionData);
+                console.log('Email result:', emailSent);
                 
                 if (!emailSent) {
-                    throw new Error('Failed to send email');
+                    throw new Error('Failed to send email notification');
                 }
 
+                console.log('Saving to Firestore...');
                 await db.collection('submissions').doc(submissionId).set({
                     id: submissionId,
                     email: submissionData.email,
@@ -1068,17 +1071,28 @@
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     status: 'emailed'
                 });
+                console.log('Firestore save successful');
 
                 loading.style.display = 'none';
                 successMessage.style.display = 'block';
 
             } catch (error) {
-                console.error('Submission Error:', error);
+                console.error('Submission Error Details:', error);
                 loading.style.display = 'none';
                 form.style.display = 'block';
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Soumettre ma réponse';
-                alert('Il y a eu une erreur lors de la soumission. Veuillez réessayer.');
+                
+                // More specific error messages
+                let errorMessage = 'Il y a eu une erreur lors de la soumission. ';
+                if (error.message.includes('email')) {
+                    errorMessage += 'Problème d\'envoi d\'email. ';
+                } else if (error.message.includes('firestore')) {
+                    errorMessage += 'Problème de sauvegarde. ';
+                }
+                errorMessage += 'Veuillez réessayer ou contactez-nous si le problème persiste.';
+                
+                alert(errorMessage);
             }
         }
 
