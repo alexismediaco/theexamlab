@@ -1061,16 +1061,21 @@
                 }
 
                 console.log('Saving to Firestore...');
-                await db.collection('submissions').doc(submissionId).set({
-                    id: submissionId,
-                    email: submissionData.email,
-                    phone: submissionData.phone,
-                    fingerprint: generateFingerprint(),
-                    examType: submissionData.examType,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    status: 'emailed'
-                });
-                console.log('Firestore save successful');
+                try {
+                    await db.collection('submissions').doc(submissionId).set({
+                        id: submissionId,
+                        email: submissionData.email,
+                        phone: submissionData.phone,
+                        fingerprint: generateFingerprint(),
+                        examType: submissionData.examType,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        status: 'emailed'
+                    });
+                    console.log('Firestore save successful');
+                } catch (firestoreError) {
+                    console.warn('Firestore save failed, but email was sent successfully:', firestoreError);
+                    // Continue anyway since the email was sent
+                }
 
                 loading.style.display = 'none';
                 successMessage.style.display = 'block';
