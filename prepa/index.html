@@ -1060,6 +1060,7 @@
                     throw new Error('Failed to send email notification');
                 }
 
+                // Try to save to Firestore but don't fail if it doesn't work
                 console.log('Saving to Firestore...');
                 try {
                     await db.collection('submissions').doc(submissionId).set({
@@ -1073,30 +1074,21 @@
                     });
                     console.log('Firestore save successful');
                 } catch (firestoreError) {
-                    console.warn('Firestore save failed, but email was sent successfully:', firestoreError);
-                    // Continue anyway since the email was sent
+                    console.warn('Firestore save failed, but continuing with submission:', firestoreError);
                 }
 
+                // Show success regardless of Firestore status since email worked
                 loading.style.display = 'none';
                 successMessage.style.display = 'block';
 
             } catch (error) {
-                console.error('Submission Error Details:', error);
+                console.error('Critical Submission Error:', error);
                 loading.style.display = 'none';
                 form.style.display = 'block';
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Soumettre ma réponse';
                 
-                // More specific error messages
-                let errorMessage = 'Il y a eu une erreur lors de la soumission. ';
-                if (error.message.includes('email')) {
-                    errorMessage += 'Problème d\'envoi d\'email. ';
-                } else if (error.message.includes('firestore')) {
-                    errorMessage += 'Problème de sauvegarde. ';
-                }
-                errorMessage += 'Veuillez réessayer ou contactez-nous si le problème persiste.';
-                
-                alert(errorMessage);
+                alert('Il y a eu une erreur lors de la soumission. Veuillez réessayer ou contactez-nous si le problème persiste.');
             }
         }
 
