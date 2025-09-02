@@ -2,13 +2,31 @@
   publish = "."
 
 [[redirects]]
-  from = "https://alevels.theexamlab.com/*"
-  to = "/alevels/:splat"
+  from = "https://advanced.theexamlab.com/*"
+  to = "/advanced/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "https://prepa.theexamlab.com/*"
   to = "/prepa/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "https://ielts.theexamlab.com/*"
+  to = "/ielts/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "https://first.theexamlab.com/*"
+  to = "/first/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "https://proficiency.theexamlab.com/*"
+  to = "/first/:splat"
   status = 200
   force = true
