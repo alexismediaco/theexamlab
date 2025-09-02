@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - The Exam Lab</title>
+    <title>Contact - The Exam Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -181,13 +181,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .section-title {
-            font-size: 2rem;
-            color: #1e74c7;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
         .content-text {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -195,99 +188,23 @@
             margin-bottom: 30px;
         }
 
-        .pricing-container {
+        .form-container {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 30px;
-            margin-top: 20px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .pricing-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
+            padding: 40px;
+            margin-top: 30px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px dashed #1e74c7;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            border-color: #1e74c7;
-            box-shadow: 0 8px 25px rgba(30, 116, 199, 0.15);
-        }
-
-        .pricing-card.popular {
-            border-color: #ff6b35;
-            position: relative;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .price-amount {
-            font-size: 2.2rem;
-            font-weight: 700;
+        .form-placeholder {
             color: #1e74c7;
-            margin: 15px 0;
-        }
-
-        .price-description {
-            color: #666;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .savings {
-            color: #28a745;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .buy-button {
-            background: linear-gradient(135deg, #1e74c7 0%, #2b5ce6 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .buy-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(30, 116, 199, 0.3);
-        }
-
-        .single-price {
-            text-align: center;
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .footer {
@@ -352,8 +269,8 @@
                 padding: 20px;
             }
 
-            .pricing-grid {
-                grid-template-columns: 1fr;
+            .form-container {
+                padding: 20px;
             }
         }
     </style>
@@ -371,25 +288,25 @@
         <nav>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/about" class="nav-link">About Us</a>
+                    <a href="/about" class="nav-link">Qui sommes nous</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/spanish" class="nav-link">Spanish A-Level</a>
+                    <a href="/scientifique" class="nav-link">Prépa Scientifique</a>
+                </li>
+				<li class="nav-item">
+                    <a href="/ecg" class="nav-link">Prépa ECG</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/french" class="nav-link">French A-Level</a>
+                    <a href="/services" class="nav-link">Nos formules</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/services" class="nav-link active">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/aleveltips" class="nav-link">A-Level Tips</a>
+                    <a href="/prepatips" class="nav-link">Astuces Prépa</a>
                 </li>
                 <li class="nav-item">
                     <a href="/contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://tidycal.com/theexamlab/taster-session" class="nav-link booking" target="_blank">BOOK A FREE TASTER SESSION</a>
+                    <a href="https://tidycal.com/theexamlab/taster-session" class="nav-link booking" target="_blank">RÉSERVEZ UNE LEÇON D'ESSAI GRATUITE!</a>
                 </li>
             </ul>
         </nav>
@@ -420,102 +337,17 @@
     
     <main class="main-content">
         <header class="page-header">
-            <h1 class="page-title">Our Services</h1>
-            <p class="page-subtitle">Professional tutoring services designed to help you excel in your A-Level examinations.</p>
+            <h1 class="page-title">Contact Us</h1>
         </header>
         
         <section class="content-section">
-            <h2 class="section-title">Customised Class (60 mins)</h2>
-            
             <div class="content-text">
-                Personalized one-on-one tutoring sessions tailored specifically to your learning needs and exam goals. Each 60-minute session focuses on your individual strengths and areas for improvement, ensuring maximum progress and confidence building.
+                Vous avez des questions sur nos cours et nos services ? Vous avez besoin d'aide pour choisir le programme de prépa le mieux adapté à vos besoins ? Vous souhaitez discuter de vos objectifs spécifiques en matière de prépa ? N'hésitez pas à nous contacter. Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24 heures.
             </div>
             
-            <div class="content-text">
-                Our customised classes cover all aspects of your A-Level curriculum, from foundational concepts to advanced exam techniques. Whether you need help with specific topics, essay writing, or exam strategy, these sessions are designed to deliver targeted, effective learning.
-            </div>
-            
-            <div class="pricing-container">
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <div class="price-amount">£50</div>
-                        <div class="price-description">Single Class</div>
-                        <div class="price-description">60 minutes</div>
-                        <a href="https://square.link/u/yIFx56mk" class="buy-button" target="_blank">Buy Now</a>
-                    </div>
-                    
-                    <div class="pricing-card popular">
-                        <div class="popular-badge">Most Popular</div>
-                        <div class="price-amount">£225</div>
-                        <div class="price-description">Pack of 5 Classes</div>
-                        <div class="savings">Save £25</div>
-                        <a href="https://square.link/u/7DIH9qm6" class="buy-button" target="_blank">Buy Now</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <div class="price-amount">£425</div>
-                        <div class="price-description">Pack of 10 Classes</div>
-                        <div class="savings">Save £75</div>
-                        <a href="https://square.link/u/fpG7CYMm" class="buy-button" target="_blank">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="content-section">
-            <h2 class="section-title">Writing Correction & Feedback</h2>
-            
-            <div class="content-text">
-                Professional review and detailed feedback on your written work to improve your writing skills and exam performance. Submit your essays, reports, or creative writing pieces and receive comprehensive analysis with specific suggestions for improvement.
-            </div>
-            
-            <div class="content-text">
-                Each correction includes detailed comments on structure, language use, grammar, vocabulary, and exam technique. You'll receive actionable feedback to help you develop stronger writing skills and achieve higher grades in your written assessments.
-            </div>
-            
-            <div class="single-price">
-                <div class="price-amount">£20</div>
-                <div class="price-description">Per Writing Correction</div>
-                <div class="price-description">Detailed feedback included</div>
-                <a href="https://square.link/u/OOhzZXo8" class="buy-button" target="_blank" style="max-width: 300px; margin: 20px auto 0;">Buy Now</a>
-            </div>
-        </section>
-        
-        <section class="content-section">
-            <h2 class="section-title">Speaking Mock Exam & Feedback (45 mins)</h2>
-            
-            <div class="content-text">
-                Realistic speaking exam practice sessions designed to build confidence and improve your oral communication skills. Each 45-minute session simulates actual exam conditions and includes comprehensive feedback on your performance.
-            </div>
-            
-            <div class="content-text">
-                Practice all components of the speaking exam including discussion topics, presentation skills, and spontaneous conversation. Receive detailed feedback on pronunciation, fluency, accuracy, and exam technique to help you achieve your best possible results.
-            </div>
-            
-            <div class="pricing-container">
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <div class="price-amount">£35</div>
-                        <div class="price-description">Single Mock Exam</div>
-                        <div class="price-description">45 minutes + feedback</div>
-                        <a href="https://square.link/u/yAJZS9NJ" class="buy-button" target="_blank">Buy Now</a>
-                    </div>
-                    
-                    <div class="pricing-card popular">
-                        <div class="popular-badge">Best Value</div>
-                        <div class="price-amount">£160</div>
-                        <div class="price-description">Pack of 5 Mock Exams</div>
-                        <div class="savings">Save £15</div>
-                        <a href="https://square.link/u/MdGiqTh0" class="buy-button" target="_blank">Buy Now</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <div class="price-amount">£300</div>
-                        <div class="price-description">Pack of 10 Mock Exams</div>
-                        <div class="savings">Save £50</div>
-                        <a href="https://square.link/u/ZABItwsM" class="buy-button" target="_blank">Buy Now</a>
-                    </div>
-                </div>
+            <div style="margin-top: 30px;">
+                <iframe data-tally-src="https://tally.so/embed/nrR2GX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="276" frameborder="0" marginheight="0" marginwidth="0" title="Contact Form Exam Lab"></iframe>
+				<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
             </div>
         </section>
         
