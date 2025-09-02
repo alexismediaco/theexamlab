@@ -945,7 +945,7 @@
             }
             
             // Basic validation - just check if it looks like a phone number
-            const phoneRegex = /^[\+]?[\d\s\-\(\)]{8,15}$/;
+            const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,20}$/;
             if (!phoneRegex.test(phone)) {
                 showError('phoneError', 'Veuillez entrer un numéro de téléphone valide');
                 return;
